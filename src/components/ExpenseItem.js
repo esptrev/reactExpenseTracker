@@ -1,10 +1,12 @@
 import './ExpenseItem.css';
+import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {
-const expenseDate =  props.date.toDateString();
+
     return (
         <div className="expense-item">
-            <div>{expenseDate}</div>
+            <ExpenseDate date={props.date}></ExpenseDate>
+            {/*<ExpenseDate date={props.date}/> You can use self closing element here*/}
             <div className="expense-item__description">
                 <h2>{props.title}</h2>
             </div>
