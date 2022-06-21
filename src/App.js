@@ -1,6 +1,7 @@
 import './App.css';
 import Expenses from "./components/Expenses/Expenses";
 import React from "react";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
     const expenses = [
@@ -24,6 +25,12 @@ const App = () => {
             date: new Date(2021, 5, 12),
         },
     ];
+
+    const addExpenseHandler = (expense) => {
+        console.log("in app.js");
+        console.log(expense)
+    };
+
     // CODE BLOCK BELOW IS NON JSX SYNTAX FOR CREATING DIV IN 35-40
     // return React.createElement(
     //     'div',
@@ -33,7 +40,7 @@ const App = () => {
     // );
     return (
         <div>
-            <h2>Lets get started</h2>
+            <NewExpense onAddExpense={addExpenseHandler}/>
             <Expenses items= {expenses}/>
 
         </div>
